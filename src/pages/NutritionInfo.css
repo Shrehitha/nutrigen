@@ -1,0 +1,249 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f7;
+    color: #333;
+}
+
+.nutrition-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+    border: 1px solid #e0e0e0;
+}
+
+.nutrition-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.nutrition-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(to right, #FF9933, #138808, #FF9933);
+}
+
+/* Search Section */
+.search-container {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.search-input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: #f8f8f8;
+}
+
+.search-input:focus {
+    border-color: #138808;
+    box-shadow: 0 0 8px rgba(19, 136, 8, 0.3);
+}
+
+.search-button {
+    padding: 0.75rem 2rem;
+    background-color: #138808;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.search-button:hover {
+    background-color: #0e6b06;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(19, 136, 8, 0.3);
+}
+
+.search-button:disabled {
+    background-color: #95a5a6;
+    transform: none;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+/* Results Section */
+.nutrition-results {
+    margin-top: 2rem;
+    animation: fadeInUp 0.5s ease-in-out;
+}
+
+.results-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.results-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: #FF9933;
+}
+
+.results-data {
+    background-color: #f8f9f7;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    border: 1px solid #eaeaea;
+}
+
+/* Nutrition Info Styling */
+.nutrient-section {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed #ddd;
+}
+
+.nutrient-section:last-child {
+    border-bottom: none;
+}
+
+.nutrient-category {
+    color: #138808;
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.nutrient-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nutrient-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.nutrient-name {
+    font-weight: 500;
+    color: #2c3e50;
+    flex: 1;
+}
+
+.nutrient-value {
+    color: #138808;
+    font-weight: 600;
+    text-align: right;
+    flex: 1;
+}
+
+.nutrient-notes {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.25rem;
+    font-style: italic;
+}
+
+/* Important Considerations */
+.important-notes {
+    background-color: #fff3cd;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    border-left: 4px solid #ffc107;
+}
+
+.notes-title {
+    color: #856404;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Error Handling */
+.error-message {
+    color: #dc3545;
+    background: #f8d7da;
+    padding: 12px;
+    border-radius: 8px;
+    margin: 15px 0;
+    border: 1px solid #f5c6cb;
+    text-align: center;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .nutrition-container {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+
+    .search-container {
+        flex-direction: column;
+    }
+
+    .search-button {
+        width: 100%;
+    }
+
+    .nutrient-item {
+        flex-direction: column;
+    }
+
+    .nutrient-value {
+        text-align: left;
+        margin-top: 0.25rem;
+    }
+}

@@ -1,0 +1,536 @@
+/* General Styles
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9fafb;
+    background-image: url('./images/nutrition7.jpg');
+    color: #333;
+}
+
+.meal-plan-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.page-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.preferences-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.form-input {
+    padding: 0.75rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.5);
+}
+
+.generate-button {
+    padding: 0.75rem 2rem;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.generate-button:hover {
+    background-color: #27ae60;
+    transform: translateY(-2px);
+}
+
+.meal-plan-results {
+    margin-top: 2rem;
+    animation: fadeInUp 0.5s ease-in-out;
+}
+
+.results-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.meal-plan-content {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.main-heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.sub-heading {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.paragraph {
+    font-size: 1rem;
+    color: #4a5568;
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+}
+
+.list-item {
+    font-size: 1rem;
+    color: #4a5568;
+    margin-bottom: 0.5rem;
+    margin-left: 1.5rem;
+    list-style-type: disc;
+    line-height: 1.6;
+}
+
+.form-input {
+    padding: 0.75rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.5);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.error-message {
+    color: #dc3545;
+    background: #f8d7da;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 15px 0;
+    border: 1px solid #f5c6cb;
+}
+
+.generate-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.data-source {
+    font-size: 0.8em;
+    color: #6c757d;
+    font-style: italic;
+}
+
+.results-header {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+select.form-input {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+} */
+
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f7;
+    background-image: url('./images/nutrition7.jpg');
+    color: #333;
+}
+
+.meal-plan-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+    border: 1px solid #e0e0e0;
+}
+
+.page-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.page-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(to right, #FF9933, #138808, #FF9933);
+}
+
+/* Form Styles */
+.preferences-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.form-input {
+    padding: 0.75rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #f8f8f8;
+}
+
+.form-input:focus {
+    border-color: #138808;
+    box-shadow: 0 0 8px rgba(19, 136, 8, 0.3);
+}
+
+select.form-input {
+    padding: 0.75rem 1rem;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+}
+
+.generate-button {
+    padding: 0.75rem 2rem;
+    background-color: #138808;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.generate-button:hover {
+    background-color: #0e6b06;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(19, 136, 8, 0.3);
+}
+
+.generate-button:disabled {
+    background-color: #95a5a6;
+    transform: none;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+/* Meal Plan Results */
+.meal-plan-results {
+    margin-top: 2rem;
+    animation: fadeInUp 0.5s ease-in-out;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    border: 1px solid #eaeaea;
+}
+
+.results-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.results-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: #FF9933;
+}
+
+/* Meal Plan Content Styling */
+.meal-plan-text {
+    font-family: 'Noto Sans', sans-serif;
+    line-height: 1.8;
+    color: #444;
+}
+
+.meal-plan-text h2,
+.meal-plan-text h3 {
+    color: #138808;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.meal-plan-text h2 {
+    font-size: 1.4rem;
+    border-bottom: 2px dashed #FF9933;
+    padding-bottom: 6px;
+    display: inline-block;
+}
+
+.meal-plan-text h3 {
+    font-size: 1.2rem;
+}
+
+.meal-plan-text p {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.meal-plan-text p::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #FF9933;
+    font-weight: bold;
+}
+
+.meal-plan-text strong {
+    color: #2c3e50;
+}
+
+/* Meal Item Cards */
+.meal-item {
+    background-color: #f8f9f7;
+    border-left: 4px solid #138808;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 0 8px 8px 0;
+    transition: transform 0.3s ease;
+}
+
+.meal-item:hover {
+    transform: translateX(5px);
+}
+
+.meal-title {
+    color: #2c3e50;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.meal-title::before {
+    content: '🍛';
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+/* Nutrients Summary */
+.nutrients-summary {
+    background-color: #f0f7f0;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    border: 1px solid #d4edda;
+}
+
+.nutrients-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    list-style: none;
+    padding: 0;
+}
+
+.nutrients-list li {
+    background-color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Error Handling */
+.error-message {
+    color: #dc3545;
+    background: #f8d7da;
+    padding: 12px;
+    border-radius: 8px;
+    margin: 15px 0;
+    border: 1px solid #f5c6cb;
+    text-align: center;
+}
+
+.meal-plan-error {
+    background-color: #fff3cd;
+    padding: 1rem;
+    border-radius: 8px;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .meal-plan-container {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+
+    .nutrients-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Improved Markdown Styling */
+.meal-plan-text {
+    font-family: 'Noto Sans', sans-serif;
+    line-height: 1.8;
+    color: #444;
+}
+
+.meal-plan-text h2 {
+    color: #138808;
+    /* Indian green */
+    font-size: 1.5rem;
+    margin: 1.5rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #FF9933;
+    /* Indian saffron */
+}
+
+.meal-plan-text h3 {
+    color: #2c3e50;
+    font-size: 1.2rem;
+    margin: 1.2rem 0 0.5rem;
+}
+
+.meal-plan-text p {
+    margin-bottom: 0.8rem;
+}
+
+.meal-plan-text ul {
+    padding-left: 1.5rem;
+}
+
+.meal-plan-text li {
+    margin-bottom: 0.5rem;
+    list-style-type: none;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.meal-plan-text li:before {
+    content: "•";
+    color: #FF9933;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.day-section {
+    background-color: #f9f9f7;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #138808;
+}
+
+.meal-time {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.3rem;
+}
+
+.calorie-info {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
