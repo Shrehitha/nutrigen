@@ -37,3 +37,4 @@ An intuitive, minimalist web app that:
 - 🕘 **History & Favorites**: (Planned) View previously searched foods and save favorites
 
 ## 📐 Architecture & Flow
+-User Input → Google Gemini API → Nutritional Data → Meal Plan + Grocery List → UI text
